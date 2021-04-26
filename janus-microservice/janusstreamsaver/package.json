@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "zapatos": "dotenv zapatos",
+    "refresh": "rm -rf node_modules/",
+    "start": "node src/server.js",
+    "start:tsc:w": "dotenv ts-node-dev src/server.ts",
+    "build": "rm yarn.lock && npm install && npm run tsc && rm .prodenv && npm run cleants",
+    "build:prod": "rm yarn.lock && npm install && npm run tsc && mv .prodenv .env && npm run cleants",
+    "cleants": "find . -not -path \"./node_modules/*\" -name \"*.ts\" -type f -delete",
+    "cleanjs": "find . -not -path \"./node_modules/*\" -name \"*.js\" -type f -delete",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.701.0",
+    "chokidar": "^3.4.0",
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^3.1.0",
+    "nodemailer": "^6.4.10",
+    "pg": "^8.2.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/nodemailer": "^6.4.0",
+    "@types/pg": "^7.14.3",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5",
+    "zapatos": "^0.1.43"
+  }
+}

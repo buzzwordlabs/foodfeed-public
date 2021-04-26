@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "lib": ["es2019"],
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  }
+}

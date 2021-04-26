@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-modalize/lib/options.d.ts b/node_modules/react-native-modalize/lib/options.d.ts
+index b4f72f0..58f7dd0 100644
+--- a/node_modules/react-native-modalize/lib/options.d.ts
++++ b/node_modules/react-native-modalize/lib/options.d.ts
+@@ -189,7 +189,7 @@ export interface IProps<FlatListItem = any, SectionListItem = any> {
+      * Android or the menu button on Apple TV. You can any function you want,
+      * but you will have to close the modal by yourself.
+      */
+-    onBackButtonPress?(): boolean;
++    onBackButtonPress?(): void;
+     /**
+      * Callback function which determines if the modal has reached the top
+      * i.e. completely opened to modal/screen height, or is at the initial

@@ -1,0 +1,55 @@
+diff --git a/node_modules/bad-words/lib/badwords.js b/node_modules/bad-words/lib/badwords.js
+index 9091708..0c758f1 100644
+--- a/node_modules/bad-words/lib/badwords.js
++++ b/node_modules/bad-words/lib/badwords.js
+@@ -12,6 +12,8 @@ class Filter {
+    * @param {string} options.placeHolder - Character used to replace profane words.
+    * @param {string} options.regex - Regular expression used to sanitize words before comparing them to blacklist.
+    * @param {string} options.replaceRegex - Regular expression used to replace profane words with placeHolder.
++   * @param {string} options.showHead - Whether or not to show the first letter of the profane word.
++   * @param {string} options.showTail - Whether or not to show the last letter of the profane word.
+    */
+   constructor(options = {}) {
+     Object.assign(this, {
+@@ -19,7 +21,9 @@ class Filter {
+       exclude: options.exclude || [],
+       placeHolder: options.placeHolder || '*',
+       regex: options.regex || /[^a-zA-Z0-9|\$|\@]|\^/g,
+-      replaceRegex: options.replaceRegex || /\w/g
++      replaceRegex: options.replaceRegex || /\w/g,
++      showHead: options.showHead || false,
++      showTail: options.showTail || false
+     })
+   }
+ 
+@@ -41,9 +45,20 @@ class Filter {
+    * @param {string} string - String to replace.
+    */
+   replaceWord(string) {
++    const { showHead, showTail } = this
++    if (showHead || showTail) {
++      let letters = string.split("")
++      const firstLetter = showHead ? letters[0] : ""
++      const lastLetter = showTail ? letters[letters.length - 1] : ""
++      if (showHead) letters.shift()
++      if (showTail) letters.pop()
++      return firstLetter + letters.join("")
++        .replace(this.regex, '')
++        .replace(this.replaceRegex, this.placeHolder) + lastLetter
++    }
+     return string
+       .replace(this.regex, '')
+-      .replace(this.replaceRegex, this.placeHolder);
++      .replace(this.replaceRegex, this.placeHolder)
+   }
+ 
+   /**
+@@ -51,7 +66,7 @@ class Filter {
+    * @param {string} string - Sentence to filter.
+    */
+   clean(string) {
+-    return string.split(/\b/).map((word) => {
++    return string.split(/\b/).map((word, index) => {
+       return this.isProfane(word) ? this.replaceWord(word) : word;
+     }).join('');
+   }

@@ -1,0 +1,21 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "project": "./mobile/tsconfig.json"
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
+    "prettier/react"
+  ],
+  "rules": {
+    "@typescript-eslint/no-use-before-define": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "warn"
+  }
+}

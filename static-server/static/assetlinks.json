@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.buzzwordlabs.foodfeed",
+      "sha256_cert_fingerprints": [
+        "24:89:FA:C6:43:13:EF:F4:69:A2:A0:0E:7C:36:4C:A6:49:55:88:64:0C:23:FC:C5:B2:65:F7:62:AF:0B:49:CC"
+      ]
+    }
+  }
+]

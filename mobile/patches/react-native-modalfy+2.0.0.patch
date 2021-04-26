@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-modalfy/utils/getStackItemData.ts b/node_modules/react-native-modalfy/utils/getStackItemData.ts
+index ece3ba7..b3d0405 100644
+--- a/node_modules/react-native-modalfy/utils/getStackItemData.ts
++++ b/node_modules/react-native-modalfy/utils/getStackItemData.ts
+@@ -1,6 +1,6 @@
+ import { isValidElementType } from 'react-is'
+ 
+-import { ModalOptions } from 'types'
++import { ModalOptions } from '../types'
+ 
+ export default function <P>(
+   modalName: Exclude<keyof P, symbol | number>,

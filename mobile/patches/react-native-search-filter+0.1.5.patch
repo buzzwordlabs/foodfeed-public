@@ -1,0 +1,123 @@
+diff --git a/node_modules/react-native-search-filter/src/index.d.ts b/node_modules/react-native-search-filter/src/index.d.ts
+index 1321d78..c8f1fc4 100644
+--- a/node_modules/react-native-search-filter/src/index.d.ts
++++ b/node_modules/react-native-search-filter/src/index.d.ts
+@@ -1,22 +1,24 @@
+ declare module "react-native-search-filter" {
+   import * as React from "react";
+-  import { TextInputProps } from "react-native";
++  import { TextInputProps, ViewStyle } from "react-native";
+ 
+   export type SearchInputFilterKeys = any;
+ 
+   export interface SearchInputProps extends TextInputProps {
+     caseSensitive?: boolean;
+     clearIcon?: React.ReactNode;
+-    clearIconViewStyles?: Object;
++    clearIconViewStyles?: ViewStyle | ViewStyle[];
+     filterKeys?: SearchInputFilterKeys;
+     fuzzy?: boolean;
+     inputFocus?: boolean;
+-    inputViewStyles?: Object;
++    inputViewStyles?: ViewStyle | ViewStyle[];
++    inputChildViewStyle?: ViewStyle | ViewStyle[];
+     onChange?: (...args: any[]) => any;
+     onSubmitEditing?: (...args: any[]) => any;
+     sortResults?: boolean;
+     throttle?: number;
+     value?: string;
++    ref?: React.MutableRefObject<any>
+   }
+ 
+   function createFilter(
+diff --git a/node_modules/react-native-search-filter/src/index.js b/node_modules/react-native-search-filter/src/index.js
+index b3a5d9d..38578fa 100644
+--- a/node_modules/react-native-search-filter/src/index.js
++++ b/node_modules/react-native-search-filter/src/index.js
+@@ -1,8 +1,8 @@
+-import PropTypes from 'prop-types';
+-import React, { Component } from 'react';
+ import { Keyboard, TextInput, TouchableOpacity, View } from 'react-native';
+-import { createFilter } from './util';
++import React, { Component } from 'react';
+ 
++import PropTypes from 'prop-types';
++import { createFilter } from './util';
+ 
+ export default class SearchInput extends Component {
+   static defaultProps = {
+@@ -11,8 +11,9 @@ export default class SearchInput extends Component {
+     clearIconViewStyles: { position: 'absolute', top: 18, right: 22 },
+     fuzzy: false,
+     inputViewStyles: {},
++    inputChildViewStyle: {},
+     onChange: () => { },
+-    throttle: 200
++    throttle: 200,
+   }
+ 
+   constructor(props) {
+@@ -22,6 +23,9 @@ export default class SearchInput extends Component {
+       inputFocus: props.inputFocus,
+     }
+     this._keyboardDidHide = this._keyboardDidHide.bind(this)
++    if (this.props?.ref) {
++      this.input = this.props.ref
++    }
+   }
+ 
+   componentDidMount() {
+@@ -57,7 +61,7 @@ export default class SearchInput extends Component {
+       <TouchableOpacity
+         onPress={() => {
+           onChangeText('')
+-          this.input.clear()
++          this.input?.clear()
+         }}
+         style={clearIconViewStyles}
+       >
+@@ -85,14 +89,20 @@ export default class SearchInput extends Component {
+     inputProps.placeholder = inputProps.placeholder || 'Search'
+     return (
+       <View style={this.props.inputViewStyles}>
+-        <TextInput
+-          style={style}
+-          {...inputProps}  // Inherit any props passed to it; e.g., multiline, numberOfLines below
+-          underlineColorAndroid={'rgba(0,0,0,0)'}
+-          ref={(input) => { this.input = input }}
+-          returnKeyType={this.props.returnKeyType}
+-          onSubmitEditing={this.props.onSubmitEditing}
+-        />
++        <View style={[{ flex: 1 }, this.props.inputChildViewStyle]}>
++          <TextInput
++            style={style}
++            {...inputProps}  // Inherit any props passed to it; e.g., multiline, numberOfLines below
++            underlineColorAndroid={'rgba(0,0,0,0)'}
++            ref={(input) => {
++              if (!this.input) {
++                this.input = input
++              }
++            }}
++            returnKeyType={this.props.returnKeyType}
++            onSubmitEditing={this.props.onSubmitEditing}
++          />
++        </View>
+         {this.renderClearIcon()}
+       </View>
+     )
+@@ -131,12 +141,14 @@ SearchInput.propTypes = {
+   filterKeys: PropTypes.oneOf([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+   fuzzy: PropTypes.bool,
+   inputFocus: PropTypes.bool,
+-  inputViewStyles: PropTypes.object,
++  inputViewStyles: PropTypes.any,
++  inputChildViewStyles: PropTypes.any,
+   onChange: PropTypes.func,
+   onSubmitEditing: PropTypes.func,
+   sortResults: PropTypes.bool,
+   throttle: PropTypes.number,
+   value: PropTypes.string,
++  ref: PropTypes.any,
+ }
+ 
+ export { createFilter };

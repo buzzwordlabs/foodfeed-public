@@ -1,0 +1,23 @@
+diff --git a/node_modules/@types/react-native-webrtc/index.d.ts b/node_modules/@types/react-native-webrtc/index.d.ts
+index fc57aea..1b92fd4 100644
+--- a/node_modules/@types/react-native-webrtc/index.d.ts
++++ b/node_modules/@types/react-native-webrtc/index.d.ts
+@@ -61,7 +61,7 @@ export class MediaStreamTrack {
+     getSettings(): void;
+     release(): void;
+ 
+-    private _switchCamera(): void;
++    _switchCamera(): void;
+ }
+ 
+ export class MediaStream {
+@@ -248,7 +248,7 @@ export interface RTCViewProps {
+     mirror?: boolean;
+     zOrder?: number;
+     objectFit?: "contain" | "cover";
+-    style?: ViewStyle;
++    style?: ViewStyle | ViewStyle[];
+ }
+ 
+-export class RTCView extends Component<RTCViewProps, any> {}
++export class RTCView extends Component<RTCViewProps, any> { }

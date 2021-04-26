@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["es6"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "es6",
+    "inlineSourceMap": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    // "noUnusedLocals": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"]
+  }
+}

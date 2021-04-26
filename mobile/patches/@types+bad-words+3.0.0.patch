@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/bad-words/index.d.ts b/node_modules/@types/bad-words/index.d.ts
+index 2cba8d8..6a9c86f 100644
+--- a/node_modules/@types/bad-words/index.d.ts
++++ b/node_modules/@types/bad-words/index.d.ts
+@@ -11,6 +11,8 @@ interface Options {
+     regex?: RegExp;
+     replaceRegex?: RegExp;
+     splitRegex?: RegExp;
++    showHead?: boolean;
++    showTail?: boolean;
+ }
+ 
+ declare class BadWordsFilter {

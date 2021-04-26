@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "name": "Salad",
+    "description": "A refreshing and healthy salad.",
+    "price": 3.5,
+    "image": {
+      "uri": "https://s3-media0.fl.yelpcdn.com/bphoto/iJPLdPMNPzWimiE0XjyL3A/o.jpg"
+    },
+    "featured": true
+  },
+  {
+    "id": "2",
+    "name": "Cheeseburger",
+    "description": "A cheesy and juicy cheeseburger.",
+    "price": 2.57,
+    "image": {
+      "uri": "https://s3-media0.fl.yelpcdn.com/bphoto/jGrFi3v_5OkiVrx1rCeiLQ/o.jpg"
+    },
+    "featured": true
+  },
+  {
+    "id": "3",
+    "name": "BLT Sandwich",
+    "description": "A beautifully stacked BLT sandwich.",
+    "price": 6.0,
+    "image": {
+      "uri": "https://img.sndimg.com/food/image/upload/w_555,h_416,c_fit,fl_progressive,q_95/v1/img/recipes/12/96/15/RCNa1fLaTS2U0FY3yOUq_BLT%205%20-%20final_6.jpg"
+    },
+    "featured": false
+  },
+  {
+    "id": "4",
+    "name": "Rotisserie Chicken",
+    "description": "A perfectly cooked rotisserie chicken.",
+    "price": 10.55,
+    "image": {
+      "uri": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190620-air-fryer-rotisserie-chicken-0451-landscape-pf-1564070983.jpg"
+    },
+    "featured": false
+  },
+  {
+    "id": "5",
+    "name": "Porterhouse Steak",
+    "description": "A delicious Porterhouse steak.",
+    "price": 4.25,
+    "image": {
+      "uri": "https://assets.bonappetit.com/photos/57ad5452f1c801a1038bcb97/master/pass/perfect-porterhouse-steak.jpg"
+    },
+    "featured": false
+  }
+]

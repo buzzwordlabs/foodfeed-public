@@ -1,0 +1,34 @@
+version: '3'
+services:
+  janus:
+    build: ./janus
+    command: ./rundev.sh
+    network_mode: '${DOCKER_NETWORK_MODE}'
+    container_name: janus
+    volumes:
+      - janus-rec-data:/janus/recordings/
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '10m'
+  jss:
+    build:
+      context: ./janusstreamsaver
+      args:
+        - ENV=dev
+    command: ./rundev.sh
+    depends_on:
+      - janus
+    network_mode: '${DOCKER_NETWORK_MODE}'
+    container_name: jss
+    volumes:
+      - janus-rec-data:/janus/recordings/
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '10m'
+
+volumes:
+  janus-rec-data:

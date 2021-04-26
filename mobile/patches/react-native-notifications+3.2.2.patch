@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-native-notifications/lib/android/app/src/main/java/com/wix/reactnativenotifications/core/NotificationIntentAdapter.java b/node_modules/react-native-notifications/lib/android/app/src/main/java/com/wix/reactnativenotifications/core/NotificationIntentAdapter.java
+index 5a75a8b..794a5e2 100644
+--- a/node_modules/react-native-notifications/lib/android/app/src/main/java/com/wix/reactnativenotifications/core/NotificationIntentAdapter.java
++++ b/node_modules/react-native-notifications/lib/android/app/src/main/java/com/wix/reactnativenotifications/core/NotificationIntentAdapter.java
+@@ -22,7 +22,9 @@ public class NotificationIntentAdapter {
+     public static boolean canHandleIntent(Intent intent) {
+         if (intent != null) {
+             Bundle notificationData = intent.getExtras();
+-            if (notificationData != null && intent.hasExtra(PUSH_NOTIFICATION_EXTRA_NAME)) {
++            if (notificationData != null &&
++                    (intent.hasExtra(PUSH_NOTIFICATION_EXTRA_NAME) ||
++                            notificationData.getString("google.message_id", null) != null)) {
+                 return true;
+             }
+         }

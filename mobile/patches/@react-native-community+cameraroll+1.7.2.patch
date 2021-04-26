@@ -1,0 +1,84 @@
+diff --git a/node_modules/@react-native-community/cameraroll/typings/CameraRoll.d.ts b/node_modules/@react-native-community/cameraroll/typings/CameraRoll.d.ts
+index e266554..bf655f9 100644
+--- a/node_modules/@react-native-community/cameraroll/typings/CameraRoll.d.ts
++++ b/node_modules/@react-native-community/cameraroll/typings/CameraRoll.d.ts
+@@ -56,11 +56,13 @@ declare namespace CameraRoll {
+ 
+   interface PhotoIdentifiersPage {
+     edges: Array<PhotoIdentifier>;
+-    page_info: {
+-      has_next_page: boolean,
+-      start_cursor?: string,
+-      end_cursor?: string,
+-    };
++    page_info: PhotoIdentifiersPageInfo
++  }
++
++  export interface PhotoIdentifiersPageInfo {
++    has_next_page: boolean,
++    start_cursor?: string,
++    end_cursor?: string,
+   }
+ 
+   interface GetAlbumsParams {
+@@ -77,33 +79,33 @@ declare namespace CameraRoll {
+     album?: string,
+   };
+ 
+-    /**
+-     * `CameraRoll.saveImageWithTag()` is deprecated. Use `CameraRoll.saveToCameraRoll()` instead.
+-     */
+-    function saveImageWithTag(tag: string): Promise<string>;
+-
+-    /**
+-     * Delete a photo from the camera roll or media library. photoUris is an array of photo uri's.
+-     */
+-    function deletePhotos(photoUris: Array<string>): Promise<boolean>;
+-    
+-    /**
+-     * Saves the photo or video to the camera roll or photo library.
+-     */
+-    function saveToCameraRoll(tag: string, type?: 'photo' | 'video'): Promise<string>;
+-
+-    /**
+-     * Saves the photo or video to the camera roll or photo library.
+-     */
+-    function save(tag: string, options?: SaveToCameraRollOptions): Promise<string> 
+-
+-    /**
+-     * Returns a Promise with photo identifier objects from the local camera
+-     * roll of the device matching shape defined by `getPhotosReturnChecker`.
+-     */
+-    function getPhotos(params: GetPhotosParams): Promise<PhotoIdentifiersPage>;
+-
+-    function getAlbums(params: GetAlbumsParams): Promise<Album[]>;
++  /**
++   * `CameraRoll.saveImageWithTag()` is deprecated. Use `CameraRoll.saveToCameraRoll()` instead.
++   */
++  function saveImageWithTag(tag: string): Promise<string>;
++
++  /**
++   * Delete a photo from the camera roll or media library. photoUris is an array of photo uri's.
++   */
++  function deletePhotos(photoUris: Array<string>): Promise<boolean>;
++
++  /**
++   * Saves the photo or video to the camera roll or photo library.
++   */
++  function saveToCameraRoll(tag: string, type?: 'photo' | 'video'): Promise<string>;
++
++  /**
++   * Saves the photo or video to the camera roll or photo library.
++   */
++  function save(tag: string, options?: SaveToCameraRollOptions): Promise<string>
++
++  /**
++   * Returns a Promise with photo identifier objects from the local camera
++   * roll of the device matching shape defined by `getPhotosReturnChecker`.
++   */
++  function getPhotos(params: GetPhotosParams): Promise<PhotoIdentifiersPage>;
++
++  function getAlbums(params: GetAlbumsParams): Promise<Album[]>;
+ }
+ 
+ export = CameraRoll;

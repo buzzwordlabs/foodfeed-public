@@ -1,0 +1,261 @@
+[
+  {
+    "id": "123abc",
+    "alias": "the-peppered-prince-fake",
+    "name": "The Peppered Prince",
+    "image_url": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+    "is_claimed": true,
+    "is_closed": false,
+    "url": "google.com",
+    "phone": "+6231234567",
+    "display_phone": "(623) 123-4567",
+    "review_count": 1520,
+    "cashbackRate": 3,
+    "categories": [
+      {
+        "alias": "newamerican",
+        "title": "American (New)"
+      },
+      {
+        "alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"
+      },
+      {
+        "alias": "coffee",
+        "title": "Coffee & Tea"
+      }
+    ],
+    "rating": 4.0,
+    "location": {
+      "address1": "1124 E University Drive",
+      "address2": "",
+      "address3": "",
+      "city": "Phoenix",
+      "zip_code": "85018",
+      "country": "US",
+      "state": "AZ",
+      "display_address": ["1124 E University Drive", "Tempe, AZ 85281"],
+      "cross_streets": ""
+    },
+    "coordinates": {
+      "latitude": 0,
+      "longitude": 0
+    },
+    "photos": [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80"
+    ],
+    "price": "$$",
+    "hours": [
+      {
+        "open": [
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 0
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 0
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 1
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 1
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 2
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 2
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 3
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 3
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 4
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2300",
+            "day": 4
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "2300",
+            "day": 5
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "2100",
+            "day": 6
+          }
+        ],
+        "hours_type": "REGULAR",
+        "is_open_now": true
+      }
+    ],
+    "transactions": ["delivery"]
+  },
+  {
+    "id": "456def",
+    "alias": "the-toasty-tavern-fake",
+    "name": "The Toasty Tavern",
+    "image_url": "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+    "is_claimed": true,
+    "is_closed": false,
+    "url": "google.com",
+    "phone": "+6231234567",
+    "display_phone": "(623) 123-4567",
+    "review_count": 1520,
+    "cashbackRate": 3,
+    "categories": [
+      {
+        "alias": "newamerican",
+        "title": "American (New)"
+      },
+      {
+        "alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"
+      },
+      {
+        "alias": "coffee",
+        "title": "Coffee & Tea"
+      }
+    ],
+    "rating": 4.0,
+    "location": {
+      "address1": "143 S College Avenue",
+      "address2": "",
+      "address3": "",
+      "city": "Phoenix",
+      "zip_code": "85018",
+      "country": "US",
+      "state": "AZ",
+      "display_address": ["143 S College Avenue", "Tempe, AZ 85281"],
+      "cross_streets": ""
+    },
+    "coordinates": {
+      "latitude": 0,
+      "longitude": 0
+    },
+    "photos": [
+      "https://images.unsplash.com/photo-1552566626-52f8b828add9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+    ],
+    "price": "$$",
+    "hours": [
+      {
+        "open": [
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 0
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 0
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 1
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 1
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 2
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 2
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 3
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2200",
+            "day": 3
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "1030",
+            "day": 4
+          },
+          {
+            "is_overnight": false,
+            "start": "1100",
+            "end": "2300",
+            "day": 4
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "2300",
+            "day": 5
+          },
+          {
+            "is_overnight": false,
+            "start": "0630",
+            "end": "2100",
+            "day": 6
+          }
+        ],
+        "hours_type": "REGULAR",
+        "is_open_now": true
+      }
+    ],
+    "transactions": ["delivery"]
+  }
+]

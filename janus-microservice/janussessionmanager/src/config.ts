@@ -1,0 +1,57 @@
+const {
+  NODE_ENV = 'dev',
+  PORT = 8001,
+  REDIS_URL,
+  REDIS_PROD_CLUSTER_HOSTS,
+  JANUS_URL,
+  INSTANCE_URL, // this tells us the location of this instance
+  FOODFEED_EMAIL_ADDRESS,
+  FOODFEED_CRASHES_EMAIL,
+  FOODFEED_GMAIL_REFRESH_TOKEN,
+  GAUTH_CLIENT_SECRET,
+  REACT_APP_GAUTH_CLIENTID,
+  DATABASE_URL
+} = process.env;
+
+const IS_PRODUCTION = NODE_ENV === 'production';
+
+const envs = [
+  NODE_ENV,
+  PORT,
+  IS_PRODUCTION,
+  REDIS_URL,
+  JANUS_URL,
+  INSTANCE_URL,
+  FOODFEED_EMAIL_ADDRESS,
+  FOODFEED_CRASHES_EMAIL,
+  FOODFEED_GMAIL_REFRESH_TOKEN,
+  GAUTH_CLIENT_SECRET,
+  REACT_APP_GAUTH_CLIENTID,
+  DATABASE_URL
+];
+
+if (!envs.every((env) => env !== undefined)) {
+  throw new Error('Some environment variables are undefined');
+}
+
+const REDIS_PROD_CLUSTER_HOSTS_ARRAY = REDIS_PROD_CLUSTER_HOSTS?.split(',').map(
+  (host) => {
+    return { host, port: 6379 };
+  }
+);
+
+export {
+  NODE_ENV,
+  PORT,
+  IS_PRODUCTION,
+  REDIS_URL,
+  REDIS_PROD_CLUSTER_HOSTS_ARRAY,
+  JANUS_URL,
+  INSTANCE_URL,
+  FOODFEED_EMAIL_ADDRESS,
+  FOODFEED_CRASHES_EMAIL,
+  FOODFEED_GMAIL_REFRESH_TOKEN,
+  GAUTH_CLIENT_SECRET,
+  REACT_APP_GAUTH_CLIENTID,
+  DATABASE_URL
+};

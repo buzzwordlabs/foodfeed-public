@@ -1,0 +1,28 @@
+diff --git a/node_modules/react-native-flash-message/src/FlashMessage.js b/node_modules/react-native-flash-message/src/FlashMessage.js
+index 5eb041e..59feee9 100644
+--- a/node_modules/react-native-flash-message/src/FlashMessage.js
++++ b/node_modules/react-native-flash-message/src/FlashMessage.js
+@@ -1,10 +1,10 @@
++import { Animated, Image, Platform, StatusBar, StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
++import FlashMessageWrapper, { styleWithInset } from "./FlashMessageWrapper";
+ import React, { Component } from "react";
+-import { StyleSheet, TouchableWithoutFeedback, Platform, StatusBar, Animated, Image, Text, View } from "react-native";
+-import { isIphoneX, getStatusBarHeight } from "react-native-iphone-x-helper";
+-import PropTypes from "prop-types";
++import { getStatusBarHeight, isIphoneX } from "react-native-iphone-x-helper";
+ 
+ import FlashMessageManager from "./FlashMessageManager";
+-import FlashMessageWrapper, { styleWithInset } from "./FlashMessageWrapper";
++import PropTypes from "prop-types";
+ 
+ /**
+  * MessageComponent `minHeight` property used mainly in vertical transitions
+@@ -621,6 +621,8 @@ const styles = StyleSheet.create({
+     paddingHorizontal: 20,
+     backgroundColor: "#696969",
+     minHeight: OFFSET_HEIGHT,
++    // FoodFeed Override
++    ...{ backgroundColor: "#F2F2F2", borderWidth: StyleSheet.hairlineWidth, borderColor: "#A4A4A4" }
+   },
+   defaultFlashCenter: {
+     margin: 44,

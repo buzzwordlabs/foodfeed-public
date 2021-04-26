@@ -1,0 +1,14 @@
+{
+  "displayName": "foodfeed",
+  "name": "foodfeed",
+  "slug": "foodfeed",
+  "privacy": "public",
+  "platforms": ["ios", "android"],
+  "orientation": "portrait",
+  "ios": {
+    "bundleIdentifier": "foodfeed"
+  },
+  "android": {
+    "package": "foodfeed"
+  }
+}

@@ -1,0 +1,38 @@
+diff --git a/node_modules/react-native-orientation-locker/index.d.ts b/node_modules/react-native-orientation-locker/index.d.ts
+index e3fa703..e86de4a 100644
+--- a/node_modules/react-native-orientation-locker/index.d.ts
++++ b/node_modules/react-native-orientation-locker/index.d.ts
+@@ -8,13 +8,18 @@
+ 
+ export type OrientationType = "PORTRAIT" | "PORTRAIT-UPSIDEDOWN" | "LANDSCAPE-LEFT" | "LANDSCAPE-RIGHT" | "FACE-UP" | "FACE-DOWN" | "UNKNOWN";
+ 
++export type ListenerCallback = (orientation: OrientationType) => void
++
+ declare class Orientation {
+-  static addOrientationListener(callback: (orientation: OrientationType) => void): void;
+-  static removeOrientationListener(callback: (orientation: OrientationType) => void): void;
+-  static addDeviceOrientationListener(callback: (deviceOrientation: OrientationType) => void): void;
+-  static removeDeviceOrientationListener(callback: (deviceOrientation: OrientationType) => void): void;
+-  static addLockListener(callback: (orientation: OrientationType) => void): void;
+-  static removeLockListener(callback: (orientation: OrientationType) => void): void;
++  static addOrientationListener(callback: ListenerCallback): void;
++  static removeOrientationListener(callback: ListenerCallback): void;
++  static addDeviceOrientationListener(callback: ListenerCallback): void;
++  static removeDeviceOrientationListener(callback: ListenerCallback): void;
++  static addLockListener(callback: ListenerCallback): void;
++  static removeLockListener(callback: ListenerCallback): void;
++  static getOrientation(callback: ListenerCallback): void;
++  static getDeviceOrientation(callback: ListenerCallback): void;
++  static getAutoRotateState(callback: ListenerCallback): void;
+   static removeAllListeners(): void;
+   static getInitialOrientation(): OrientationType;
+   static isLocked(): boolean;
+@@ -24,8 +29,5 @@ declare class Orientation {
+   static lockToLandscapeRight(): void;
+   static lockToPortraitUpsideDown(): void;
+   static unlockAllOrientations(): void;
+-  static getOrientation(callback: (orientation: OrientationType) => void): void;
+-  static getDeviceOrientation(callback: (orientation: OrientationType) => void): void;
+-  static getAutoRotateState(callback: (state: boolean) => void): void;
+ }
+ export default Orientation;

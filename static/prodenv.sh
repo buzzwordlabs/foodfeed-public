@@ -1,0 +1,2 @@
+export NODE_ENV=production
+export SKIP_PREFLIGHT_CHECK=true

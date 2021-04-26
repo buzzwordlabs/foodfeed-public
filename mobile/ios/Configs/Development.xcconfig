@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  foodFeed
+//
+//  Created by Ethan Naluz on 2/6/20.
+//  Copyright © 2020 Facebook. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GOOGLE_MAPS_IOS_SDK_KEY = AIzaSyDwxL1JcmiZ6EQydfqjUD5UpN9NX27h0fM

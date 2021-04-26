@@ -1,0 +1,11 @@
+node_modules/
+*
+!*.ts
+!*.tsx
+!*.json
+!*.css
+!*.scss
+!*.md
+!*.yml
+!*.html
+!*/

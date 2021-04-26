@@ -1,0 +1,67 @@
+{
+  "name": "foodfeed",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "source ./prodenv.sh && react-scripts start",
+    "build": "source ./prodenv.sh && react-scripts build",
+    "test": "source ./prodenv.sh && react-scripts test",
+    "eject": "source ./prodenv.sh && react-scripts eject",
+    "predeploy": "source ./prodenv.sh && yarn build"
+  },
+  "dependencies": {
+    "a11y-react-emoji": "^1.1.2",
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
+    "react-ga": "^3.0.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-image-gallery": "^1.0.7",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "react-toastify": "^6.0.5",
+    "typescript-plugin-css-modules": "^2.3.0",
+    "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.3.0",
+    "@testing-library/user-event": "^12.0.3",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.38",
+    "@types/react-bootstrap": "^1.0.1",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-google-recaptcha": "^1.1.2",
+    "@types/react-image-gallery": "^0.9.3",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/validator": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^5.1.3",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "typescript": "^3.9.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:8002"
+}

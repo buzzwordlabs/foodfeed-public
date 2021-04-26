@@ -1,0 +1,64 @@
+{
+  "id": "a1",
+  "name": "Cheeseburger",
+  "description": "A delicious cheeseburger.",
+  "basePrice": 1,
+  "images": [
+    {
+      "url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80",
+      "id": "b1",
+      "description": "Tasty burger!"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2097&q=80",
+      "id": "b2",
+      "description": "Burgers and Coca Cola are a great combo."
+    }
+  ],
+  "customizations": [
+    {
+      "id": "c1",
+      "type": "selectMultiple",
+      "description": "Simple add ons",
+      "options": [
+        {
+          "id": "d1",
+          "name": "lettuce",
+          "description": "Extra lettuce",
+          "price": 0.1
+        },
+        {
+          "id": "d2",
+          "name": "cheese",
+          "description": "Extra cheese",
+          "price": 0.2
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "selectOne",
+      "description": "Select your size",
+      "options": [
+        {
+          "id": "e1",
+          "name": "small",
+          "description": "Size small",
+          "price": 0.3
+        },
+        {
+          "id": "e2",
+          "name": "medium",
+          "description": "Size medium",
+          "price": 0.4
+        },
+        {
+          "id": "e3",
+          "name": "large",
+          "description": "Size large",
+          "price": 0.5
+        }
+      ]
+    }
+  ]
+}

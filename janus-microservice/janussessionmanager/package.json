@@ -1,0 +1,50 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start:prod": "./setupprodvars.sh && npm run db:migrate && node src/server.js",
+    "db:migrate": "dotenv graphile-migrate migrate",
+    "zapatos": "dotenv zapatos",
+    "db:commit": "dotenv graphile-migrate commit && yarn zapatos",
+    "db:uncommit": "dotenv graphile-migrate uncommit",
+    "db:reset": "dotenv -- graphile-migrate reset --erase && yarn zapatos",
+    "refresh": "rm -rf node_modules/",
+    "start": "node src/server.js",
+    "start:tsc:w": "dotenv ts-node-dev src/server.ts",
+    "build:prod": "rm yarn.lock && npm install && npm run tsc && mv .prodenv .env && npm run cleants",
+    "cleants": "find . -not -path \"./node_modules/*\" -name \"*.ts\" -type f -delete",
+    "cleanjs": "find . -not -path \"./node_modules/*\" -name \"*.js\" -type f -delete",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "dotenv-cli": "^3.1.0",
+    "graphile-migrate": "^0.3.1",
+    "ioredis": "^4.17.3",
+    "minijanus-ts": "^0.6.4",
+    "nodemailer": "^6.4.10",
+    "pg": "^8.2.1",
+    "socket.io": "^2.3.0",
+    "winston": "^3.2.1",
+    "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/ioredis": "^4.16.6",
+    "@types/node": "^14.0.13",
+    "@types/nodemailer": "^6.4.0",
+    "@types/pg": "^7.14.3",
+    "@types/socket.io": "^2.1.8",
+    "@types/socket.io-client": "^1.4.33",
+    "@types/ws": "^7.2.5",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.49",
+    "typescript": "^3.9.5",
+    "zapatos": "^0.1.43"
+  }
+}

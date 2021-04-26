@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=janus
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    network_mode: 'host'
+    restart: always
+    logging:
+      driver: 'json-file'
+      options:
+        max-file: '5'
+        max-size: '10m'
+  janus:
+    build: ./janus
+    command: ./runprod.sh
+    network_mode: 'host'
+    container_name: janus
+    volumes:
+      - janus-rec-data:/janus/recordings/
+    restart: always
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: 'janus'
+        awslogs-stream: 'janus-${AWS_MY_IP}'
+        awslogs-create-group: 'true'
+  jsm:
+    build: ./janussessionmanager
+    command: ./runprod.sh
+    network_mode: 'host'
+    depends_on:
+      - postgres
+      - janus
+    container_name: jsm
+    restart: always
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: 'janussessionmanager'
+        awslogs-stream: 'janussessionmanager-${AWS_MY_IP}'
+        awslogs-create-group: 'true'
+  jss:
+    build:
+      context: ./janusstreamsaver
+      args:
+        - ENV=production
+    command: ./runprod.sh
+    network_mode: 'host'
+    depends_on:
+      - postgres
+      - janus
+    container_name: jss
+    volumes:
+      - janus-rec-data:/janus/recordings/
+    restart: always
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: 'janusstreamsaver'
+        awslogs-stream: 'janusstreamsaver-${AWS_MY_IP}'
+        awslogs-create-group: 'true'
+
+volumes:
+  database-data:
+  janus-rec-data:
